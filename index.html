@@ -47,32 +47,75 @@
         </header>
         <div class="container">
             <div class="row" id="introducao">
-                <h2 class="mt-5">Introdução</h2>
-                <p>Mussum Ipsum, cacilds vidis litro abertis. Quem manda na minha terra sou euzis! Si num tem leite então bota uma pinga aí cumpadi! Manduma pindureta quium dia nois paga. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. </p>
-                <img class="col-md-5 col-sm-11 m-2" src="./img/ponte_rio_matapi.jpg" alt="ponte_rio_matapi">
-                <div class="embed-responsive embed-responsive-16by9 col-md-5 col-sm-11 m-2">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gpC9621rC7E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
+                <h2>Introdução</h2>
+                <p> O alimentador foi desenvolvido pelos alunos Leonardo, Maiki, Tarlles e
+                    Vinicius como trabalho da disciplina de Sistemas Distribuidos do curso Tecnologia em Sistemas 
+                    para Internet do Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de 
+                    Minas-Câmpus Barbacena.
+                    O alimentador tem a função de gerenciar a alimentação de peixes em dois tanques simultaneamente, 
+                    gerenciando o horário, a quantidade e qual tanque deve ser alimentado.
+                </p>
+                <div class="embed-responsive embed-responsive-16by9 col-md-5 col-sm-11 m-3 p-0" >
+                    <video class="embed-responsive-item" controls muted width="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        <source  src="./video/video2.mp4">
+                    </video>
                 </div>
-            </div><br>
-            <div class="row">
-                <div class="col-md-12" id="arduino">
-                    <h2 class="mt-5">Arduino</h2>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Quem manda na minha terra sou euzis! Si num tem leite então bota uma pinga aí cumpadi! Manduma pindureta quium dia nois paga. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. </p>
-                    
-                </div>
-                <div class="col-md-12" id="servidor">
-                    <h2 class="mt-5">Servidor</h2>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Quem manda na minha terra sou euzis! Si num tem leite então bota uma pinga aí cumpadi! Manduma pindureta quium dia nois paga. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. </p>
-                    
-                </div>
-                <div class="col-md-12" id="cliente">
-                    <h2 class="mt-5">Cliente</h2>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Quem manda na minha terra sou euzis! Si num tem leite então bota uma pinga aí cumpadi! Manduma pindureta quium dia nois paga. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. </p>
-                    
+                <div class="col-md-5 col-sm-11 ">
+                    <div class="row bg-dark m-3 mt-5 text-center">
+                        <img height="250px" width="100%" src="./img/alimentador4.jpeg" alt="alimentador4"  data-toggle="modal" data-target="#img4">
+                    </div>
+                    <div class="row  bg-dark m-3 mt-5 text-center">
+                        <img height="250px" width="100%" src="./img/alimentador5.jpeg" alt="alimentador5"  data-toggle="modal" data-target="#img5">
+                    </div>
+                    <div class="row bg-dark m-3 mt-5 text-center">
+                        <img height="250px" width="100%" src="./img/alimentador6.jpeg" alt="alimentador6"  data-toggle="modal" data-target="#img6">
+                    </div>
                 </div>
             </div>
-        </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-5 col-sm-11 mt-5" id="servidor">
+                    <h2>Servidor</h2>
+                    <p>O servidor possui uma agenda com os horários, quantidade e qual tanque deve ser alimentado, 
+                        consultas a uma api para fornecimento da hora certa são realizadas frequentemente para garantir 
+                        que a alimentação seja realizada no horário correto. Quando o servidor determina que a hora certa é igual
+                        uma hora da agenda de alimentações uma conexão via bluetooh é estabelecida com o arduino para que 
+                        a alimentação seja realizada. O servidor também funções de criptografia e arquivos de log informando os 
+                        horários que as alimentaçoes ocorreram.
+
+                    </p>
+                    
+                </div>
+                <div class="col-md-5 col-sm-11 mt-5" id="cliente">
+                    <h2>Cliente</h2>
+                    <p>O cliente foi desenvolvido em python com a interface gráfica TKinter. No início da aplicação
+                        é necessário informar o endereço do servidor e a chave do servidor de criptografia assimetrica utilizando
+                        o método de criptografia AES. O cliente possui as opções de cadastrar uma alimentação informando o horário,
+                        a quantidade e qual tanque deve ser alimentado, listar as alimentações que estão agendadas e apagar uma alimentação
+                        que está agendada.
+                    </p>
+                </div>
+            </div>
+            
+
+            <div class="row mt-5" id="arduino">
+                    <h2>Arduíno</h2>
+                    <p>O Hardware do projeto é composto por uma placa de prototipagem arduino, um motor servo, um motor corrente contínua, um relé de acionamento de energia, um dispositivo bluetooth. O arduino recebendo os dados corretamente do servidor, efetua operações de controle destes dispositivos.
+                        Servo - dispositivo usado para o controle de qual saída de alimentação será utilizada, controlada pelo arduino como direita ou esquerda.
+                        Motor Corrente contínua - Controlado pelo acionamento do relé, é utilizado para efetuar o giro da rosca infinita dentro do tubo alimentador empurrando a ração até o orifício de saída.
+                        Relé - Efetua controle do motor de corrente contínua, como o cálculo da quantidade de ração e feito em conformidade ao tempo de giro do motor o relé é utilizado para informar quando será ligado e quando será desligado o motor, alimentando ou parando assim uma alimentação.
+                        Bluetooth  - utilizado para comunicação do arduino com o servidor.
+                        </p>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div>
+                            <img src="./img/alimentador11.jpeg" alt="alimentador4" data-toggle="modal" data-target="#img9">    
+                        </div>
+                    </div>                
+                </div>
+
+            </div>
+
+
         <footer id="sobre" class="page-footer bg-dark mt-5">
                 <div class="container text-center text-md-left">
                     <div class="contaier text-light mt-3">
@@ -100,11 +143,73 @@
                     </div>
                 </div>
         </footer>
-
+        
+    <!-- Modal img4-->
+        <div id="img4" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">  
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>    
+                    <div class="modal-body">
+                        <img class="col-12" src="./img/alimentador4.jpeg" alt="alimentador6">
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- Modal img5-->
+        <div id="img5" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">  
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="col-12" src="./img/alimentador5.jpeg" alt="alimentador6">
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- Modal img6-->
+        <div id="img6" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">  
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="col-12" src="./img/alimentador6.jpeg" alt="alimentador6">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal img9-->
+        <div id="img9" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">  
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="col-12" src="./img/alimentador11.jpeg" alt="alimentador6">
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script src="./js/jquery/jquery-3.3.1.min.js"></script>
     <script src="./js/propper/propper.js"></script>
     <script src="./js/tooltip/tooltip.js"></script>
     <script src="./js/bootstrap/bootstrap.min.js"></script>
+    
+
     </body>
 </html>
