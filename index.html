@@ -76,31 +76,33 @@
         </header>
         <div class="container">
             <div class="row" id="introducao">
-                <div class="mt-5">
-                    <br>
-                    <h2>Introdução</h2>
-                    <p> O alimentador foi desenvolvido pelos alunos Leonardo, Maiki, Tarlles e
-                        Vinicius como trabalho da disciplina de Sistemas Distribuidos do curso Tecnologia em Sistemas 
-                        para Internet do Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de 
-                        Minas-Câmpus Barbacena.
-                        O alimentador tem a função de gerenciar a alimentação em dois tanques simultaneamente, 
-                        gerenciando o horário, a quantidade e qual tanque deve ser alimentado.
-                    </p>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 col-md-5 col-sm-11 m-3 p-0" >
-                    <video class="embed-responsive-item" controls muted width="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                        <source  src="./video/video2.mp4">
-                    </video>
-                </div>
-                <div class="col-md-5 col-sm-11">
-                    <div class="row bg-dark m-3 mt-5 text-center">
-                        <img height="250px" width="100%" src="./img/alimentador4.jpeg" alt="alimentador4"  data-toggle="modal" data-target="#img4">
+                <div class="col=11">
+                    <div class="mt-5">
+                        <br>
+                        <h2>Introdução</h2>
+                        <p> O alimentador foi desenvolvido pelos alunos Leonardo, Maiki, Tarlles e
+                            Vinicius como trabalho da disciplina de Sistemas Distribuidos do curso Tecnologia em Sistemas 
+                            para Internet do Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de 
+                            Minas-Câmpus Barbacena.
+                            O alimentador tem a função de gerenciar a alimentação em dois tanques simultaneamente, 
+                            gerenciando o horário, a quantidade e qual tanque deve ser alimentado.
+                        </p>
                     </div>
-                    <div class="row  bg-dark m-3 mt-5 text-center">
-                        <img height="250px" width="100%" src="./img/alimentador5.jpeg" alt="alimentador5"  data-toggle="modal" data-target="#img5">
+                    <div class="embed-responsive embed-responsive-16by9 col-md-5 col-sm-11 m-3 p-0" >
+                        <video class="embed-responsive-item" controls muted width="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            <source  src="./video/video2.mp4">
+                        </video>
                     </div>
-                    <div class="row bg-dark m-3 mt-5 text-center">
-                        <img height="250px" width="100%" src="./img/alimentador6.jpeg" alt="alimentador6"  data-toggle="modal" data-target="#img6">
+                    <div class="col-md-5 col-sm-11">
+                        <div class="row bg-dark m-3 mt-5 text-center">
+                            <img height="250px" width="100%" src="./img/alimentador4.jpeg" alt="alimentador4"  data-toggle="modal" data-target="#img4">
+                        </div>
+                        <div class="row  bg-dark m-3 mt-5 text-center">
+                            <img height="250px" width="100%" src="./img/alimentador5.jpeg" alt="alimentador5"  data-toggle="modal" data-target="#img5">
+                        </div>
+                        <div class="row bg-dark m-3 mt-5 text-center">
+                            <img height="250px" width="100%" src="./img/alimentador6.jpeg" alt="alimentador6"  data-toggle="modal" data-target="#img6">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,21 +136,22 @@
             </div>
             
 
-            <div class="row" id="arduino">
-                <div class="mt-5">
-                <br>
-                    <h2>Arduíno</h2>
-                    <p>O Hardware do projeto é composto por uma placa de prototipagem arduino, um motor servo, um motor corrente contínua, um relé de acionamento de energia, um dispositivo bluetooth. O arduino recebendo os dados corretamente do servidor, efetua operações de controle destes dispositivos.
-                        Servo - dispositivo usado para o controle de qual saída de alimentação será utilizada, controlada pelo arduino como direita ou esquerda.
-                        Motor Corrente contínua - Controlado pelo acionamento do relé, é utilizado para efetuar o giro da rosca infinita dentro do tubo alimentador empurrando a ração até o orifício de saída.
-                        Relé - Efetua controle do motor de corrente contínua, como o cálculo da quantidade de ração e feito em conformidade ao tempo de giro do motor o relé é utilizado para informar quando será ligado e quando será desligado o motor, alimentando ou parando assim uma alimentação.
-                        Bluetooth  - utilizado para comunicação do arduino com o servidor.
-                        </p>
-                    <div class="row d-flex justify-content-center">
-                            <img class="mw-5 my-3 mx-auto" src="./img/alimentador11.jpeg" alt="alimentador4" data-toggle="modal" data-target="#img9">    
-                    </div>                
+            <div class="row">
+                <div class="col-11" id="arduino">
+                    <div class="mt-5">
+                    <br>
+                        <h2>Arduíno</h2>
+                        <p>O Hardware do projeto é composto por uma placa de prototipagem arduino, um motor servo, um motor corrente contínua, um relé de acionamento de energia, um dispositivo bluetooth. O arduino recebendo os dados corretamente do servidor, efetua operações de controle destes dispositivos.
+                            Servo - dispositivo usado para o controle de qual saída de alimentação será utilizada, controlada pelo arduino como direita ou esquerda.
+                            Motor Corrente contínua - Controlado pelo acionamento do relé, é utilizado para efetuar o giro da rosca infinita dentro do tubo alimentador empurrando a ração até o orifício de saída.
+                            Relé - Efetua controle do motor de corrente contínua, como o cálculo da quantidade de ração e feito em conformidade ao tempo de giro do motor o relé é utilizado para informar quando será ligado e quando será desligado o motor, alimentando ou parando assim uma alimentação.
+                            Bluetooth  - utilizado para comunicação do arduino com o servidor.
+                            </p>
+                        <div class="text-center">
+                                <img src="./img/alimentador11.jpeg" alt="alimentador4" data-toggle="modal" data-target="#img9" style="max-width:100%">    
+                        </div>                
+                    </div>
                 </div>
-
             </div>
         </div>
 
