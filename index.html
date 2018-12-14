@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="./css/custom.css">
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="col-12 position-fixed">
-                <nav class=" row navbar navbar-expand-lg navbar-light bg-light  ">
+
+        <div class="container-fluid position-fixed">
+            <div class="row">
+                <nav class="col-12 navbar navbar-expand-sm nav-tabs navbar-light bg-light  ">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse  justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav nav-tabs justify-content-center ">
+                    <div class="collapse navbar-collapse  justify-content-center nav-tabs" id="navbarNav">
+                        <ul class="navbar-nav ">
                             <li class="nav-item">
                                 <a class="nav-link" href="#inicio">Inicio</a>
                             </li>
@@ -55,12 +56,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="#arduino">Arduino</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#sobre">Sobre</a>
-				</li>
 			</ul>
         </nav>
-    -->
+-->
         <header class="masthead bg-dark" id="inicio">
             <div class="container">
                 <div class="row">
@@ -78,14 +76,17 @@
         </header>
         <div class="container">
             <div class="row" id="introducao">
-                <h2 class="mt-5">Introdução</h2>
-                <p> O alimentador foi desenvolvido pelos alunos Leonardo, Maiki, Tarlles e
-                    Vinicius como trabalho da disciplina de Sistemas Distribuidos do curso Tecnologia em Sistemas 
-                    para Internet do Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de 
-                    Minas-Câmpus Barbacena.
-                    O alimentador tem a função de gerenciar a alimentação em dois tanques simultaneamente, 
-                    gerenciando o horário, a quantidade e qual tanque deve ser alimentado.
-                </p>
+                <div class="mt-5">
+                    <br>
+                    <h2>Introdução</h2>
+                    <p> O alimentador foi desenvolvido pelos alunos Leonardo, Maiki, Tarlles e
+                        Vinicius como trabalho da disciplina de Sistemas Distribuidos do curso Tecnologia em Sistemas 
+                        para Internet do Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de 
+                        Minas-Câmpus Barbacena.
+                        O alimentador tem a função de gerenciar a alimentação em dois tanques simultaneamente, 
+                        gerenciando o horário, a quantidade e qual tanque deve ser alimentado.
+                    </p>
+                </div>
                 <div class="embed-responsive embed-responsive-16by9 col-md-5 col-sm-11 m-3 p-0" >
                     <video class="embed-responsive-item" controls muted width="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                         <source  src="./video/video2.mp4">
@@ -102,25 +103,12 @@
                         <img height="250px" width="100%" src="./img/alimentador6.jpeg" alt="alimentador6"  data-toggle="modal" data-target="#img6">
                     </div>
                 </div>
-                
             </div>
             
             <div class="row">
-                <div class="col-md-5 col-sm-11" id="servidor">
-                    <div class="mt-5">
-                        <h2>Servidor</h2>
-                        <p>O servidor possui uma agenda com os horários, quantidade e qual tanque deve ser alimentado, 
-                            consultas a uma api para fornecimento da hora certa são realizadas frequentemente para garantir 
-                            que a alimentação seja realizada no horário correto. Quando o servidor determina que a hora certa é igual
-                            uma hora da agenda de alimentações uma conexão via bluetooh é estabelecida com o arduino para que 
-                            a alimentação seja realizada. O servidor também funções de criptografia e arquivos de log informando os 
-                            horários que as alimentaçoes ocorreram.
-
-                        </p>
-                    </div>
-                </div>
                 <div class="col-md-5 col-sm-11" id="cliente">
                     <div class="mt-5">
+                        <br>
                         <h2>Cliente</h2>
                         <p>O cliente foi desenvolvido em python com a interface gráfica TKinter. No início da aplicação
                             é necessário informar o endereço do servidor e a chave do servidor de criptografia assimetrica utilizando
@@ -130,11 +118,25 @@
                         </p>
                     </div>
                 </div>
+                <div class="col-md-5 col-sm-11" id="servidor">
+                    <div class="mt-5">
+                        <br>
+                        <h2>Servidor</h2>
+                        <p>O servidor possui uma agenda com os horários, quantidade e qual tanque deve ser alimentado, 
+                            consultas a uma api para fornecimento da hora certa são realizadas frequentemente para garantir 
+                            que a alimentação seja realizada no horário correto. Quando o servidor determina que a hora certa é igual
+                            uma hora da agenda de alimentações uma conexão via bluetooh é estabelecida com o arduino para que 
+                            a alimentação seja realizada. O servidor também funções de criptografia e arquivos de log informando os 
+                            horários que as alimentaçoes ocorreram.
+                        </p>
+                    </div>
+                </div>
             </div>
             
 
             <div class="row" id="arduino">
                 <div class="mt-5">
+                <br>
                     <h2>Arduíno</h2>
                     <p>O Hardware do projeto é composto por uma placa de prototipagem arduino, um motor servo, um motor corrente contínua, um relé de acionamento de energia, um dispositivo bluetooth. O arduino recebendo os dados corretamente do servidor, efetua operações de controle destes dispositivos.
                         Servo - dispositivo usado para o controle de qual saída de alimentação será utilizada, controlada pelo arduino como direita ou esquerda.
@@ -142,10 +144,8 @@
                         Relé - Efetua controle do motor de corrente contínua, como o cálculo da quantidade de ração e feito em conformidade ao tempo de giro do motor o relé é utilizado para informar quando será ligado e quando será desligado o motor, alimentando ou parando assim uma alimentação.
                         Bluetooth  - utilizado para comunicação do arduino com o servidor.
                         </p>
-                    <div class="col-12 d-flex justify-content-center">
-                        <div>
-                            <img src="./img/alimentador11.jpeg" alt="alimentador4" data-toggle="modal" data-target="#img9">    
-                        </div>
+                    <div class="row d-flex justify-content-center">
+                            <img class="mw-5 my-3 mx-auto" src="./img/alimentador11.jpeg" alt="alimentador4" data-toggle="modal" data-target="#img9">    
                     </div>                
                 </div>
 
